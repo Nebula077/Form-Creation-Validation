@@ -1,9 +1,9 @@
 async function fetchUserData() {
-    apiURL = 'https://jsonplaceholder.typicode.com/users'
+    const apiUrl = 'https://jsonplaceholder.typicode.com/users'
     const dataContainer = document.getElementById('api-data');
 
     try {
-        const response = await fetch(apiURL);
+        const response = await fetch(apiUrl);
         const users = await response.json();
         const userList = users.map(user => `<li>${user.name}</li>`).join('');
         dataContainer.innerHTML = '';
